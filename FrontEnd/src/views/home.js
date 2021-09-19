@@ -19,7 +19,7 @@ function AppHome() {
       <AppFaq/>
       <AppPricing/>
       <AppContact/>
-      <SignUp/>
+      
     </div>
   );
 }
