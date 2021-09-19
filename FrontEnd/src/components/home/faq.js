@@ -10,7 +10,7 @@ function AppFaq() {
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>Frequently Asked Questions</h2>
-          <p>Quidem reiciendis iure, aperiam blanditiis. Alias esse, nam, ea quam</p>
+          
         </div>
         <Collapse defaultActiveKey={['1']}>
           <Panel header="How to setup the theme?" key="1">
@@ -34,7 +34,7 @@ function AppFaq() {
         </Collapse>
         <div className="quickSupport">
           <h3>Want quick support?</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur velit necessitatibus praesentium aliquid eos in neque recusandae, incidunt esse dolore voluptatum nesciunt quod soluta consequuntur voluptatibus ab excepturi nobis! Porro!</p>
+          <p>Send us an email or contact the admin</p>
           <Button type="primary" size="large"><i className="fas fa-envelope"></i> Email your question</Button>
         </div>
       </div>
