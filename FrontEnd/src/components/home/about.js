@@ -7,19 +7,19 @@ const items = [
     key: '1',
     icon: <i className="fas fa-chart-pie"></i>,
     title: 'High Performance',
-    content: 'cu nostro dissentias consectetuer mel. Ut admodum conceptam mei, cu eam tation fabulas abhorreant. His ex mandamus.',
+    content: 'Easy access to Learning materials.',
   },
   {
     key: '2',
     icon: <i className="fas fa-desktop"></i>,
-    title: 'Flat Design',
-    content: 'cu nostro dissentias consectetuer mel. Ut admodum conceptam mei, cu eam tation fabulas abhorreant. His ex mandamus.',
+    title: 'Student tracker',
+    content: 'Track the progress of the students.',
   },
   {
     key: '3',
     icon: <i className="fas fa-database"></i>,
-    title: 'Simplified Workflow',
-    content: 'cu nostro dissentias consectetuer mel. Ut admodum conceptam mei, cu eam tation fabulas abhorreant. His ex mandamus.',
+    title: 'Interactive discussions',
+    content: 'Strengthen the interaction between teacher and student.',
   },
 ]
 
@@ -29,10 +29,10 @@ function AppAbout() {
       <div className="container-fluid">
         <div className="titleHolder">
           <h2>About Us</h2>
-          <p>dolor sit amet, consectetur adipisicing elit</p>
+          <p>Smart Online Class</p>
         </div>
         <div className="contentHolder">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus officiis repudiandae est deserunt delectus dolorem iure porro distinctio fuga, nostrum doloremque. Facilis porro in laborum dolor amet ratione hic? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aut a porro, adipisci quidem sint enim pariatur ducimus, saepe voluptatibus inventore commodi! Quis, explicabo molestias libero tenetur temporibus perspiciatis deserunt.</p>
+          <p>Online Learning platform to strengthen teacher to student interaction and power up distance learning by online classes and easy access to learning materials.</p>
         </div>
         <Row gutter={[16, 16]}>   
           {items.map(item => {

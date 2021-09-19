@@ -21,9 +21,9 @@ function AppHeader() {
       <div className="header">
         <div className="logo">
           <i className="fas fa-bolt"></i>
-          <a href="http://google.com">Tech</a>
+          <a href="#hero">Panthiya</a> 
         </div>
-        <div className="mobileHidden">
+        <div className="mobleHidden">
           <Anchor targetOffset="65">
             <Link href="#hero" title="Home" />
             <Link href="#about" title="About" />
@@ -33,6 +33,7 @@ function AppHeader() {
             <Link href="#pricing" title="Pricing" />
             <Link href="#contact" title="Contact" />
             <Router_Link to={"/login"}>Login</Router_Link>
+            <Router_Link to={"/signup"}>Sign Up</Router_Link>
           </Anchor>
         </div>
         <div className="mobileVisible">
@@ -53,6 +54,10 @@ function AppHeader() {
               <Link href="#faq" title="FAQ" />
               <Link href="#pricing" title="Pricing" />
               <Link href="#contact" title="Contact" />
+              <Link href="/login" title="login" />
+              <Link href="/signup" title="signup" />
+              <Router_Link to={"/login"}>Login</Router_Link>
+            <Router_Link to={"/signup"}>Sign Up</Router_Link>
             </Anchor>
           </Drawer>
         </div>
