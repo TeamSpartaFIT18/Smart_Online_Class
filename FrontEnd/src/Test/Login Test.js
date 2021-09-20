@@ -1,6 +1,20 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+/*
+import { LoginForm, ProFormText, ProFormCaptcha, ProFormCheckbox } from '@ant-design/pro-form';
+import {
+  UserOutlined,
+  MobileOutlined,
+  LockOutlined,
+  AlipayCircleOutlined,
+  TaobaoCircleOutlined,
+  WeiboCircleOutlined,
+} from '@ant-design/icons';
+import { message, Tabs, Space } from 'antd';
+import  { CSSProperties } from 'react';
+import { useState } from 'react';
+*/
 function LoginTest() {
   const {
     loginWithPopup,
@@ -10,6 +24,7 @@ function LoginTest() {
     isAuthenticated,
     getAccessTokenSilently,
   } = useAuth0();
+
   async function CallApi() {
     try {
       const res = await axios.get("http://localhost:5000/");
@@ -18,6 +33,7 @@ function LoginTest() {
       console.log(error.message);
     }
   }
+
   async function CallProtectedApi() {
     try {
       const token = await getAccessTokenSilently();
@@ -33,7 +49,9 @@ function LoginTest() {
   }
 
   return (
+  
     <div>
+      
       <h2>Auth0 authentication</h2>
       <ul>
         <li>
@@ -56,6 +74,9 @@ function LoginTest() {
       <button onClick={CallApi}>Call Api</button>
       <button onClick={CallProtectedApi}>Call Protected Api</button>
     </div>
+    
+   
+    
   );
 }
 

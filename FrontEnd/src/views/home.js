@@ -7,6 +7,7 @@ import AppWorks from '../components/home/works';
 import AppFaq from '../components/home/faq';
 import AppPricing from '../components/home/pricing';
 import AppContact from '../components/home/contact';
+import SignUp from '../components/SignUp/signUp';
 
 function AppHome() {
   return (
@@ -18,6 +19,7 @@ function AppHome() {
       <AppFaq/>
       <AppPricing/>
       <AppContact/>
+      
     </div>
   );
 }
