@@ -1,313 +1,113 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Card } from 'antd';
-import  { useState } from 'react';
+import axios from "axios";
+import { Link as Router_Link } from "react-router-dom";
+
+
+
+function SignUp() {
+
+        return(
+
+            <div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+		<h2>Sign Up</h2>
+		<p>Please fill in this form to create an account!</p>
+		<hr/>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="username" placeholder="Username" required="required"/>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-paper-plane"></i>
+					</span>                    
+				</div>
+				<input type="email" class="form-control" name="email" placeholder="Email Address" required="required"/>
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="password" placeholder="Password" required="required"/>
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-check"></i>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required"/>
+			</div>
+        </div>
+        <div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"/> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="/login">Login here</a></div>
+</div>
 
 
 
 
 
-import {
-  Form,
-  Input,
-  InputNumber,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
-  Button,
-  AutoComplete,
-} from 'antd';
-const { Option } = Select;
-const residences = [
-  {
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [
-      {
-        value: 'hangzhou',
-        label: 'Hangzhou',
-        children: [
-          {
-            value: 'xihu',
-            label: 'West Lake',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [
-      {
-        value: 'nanjing',
-        label: 'Nanjing',
-        children: [
-          {
-            value: 'zhonghuamen',
-            label: 'Zhong Hua Men',
-          },
-        ],
-      },
-    ],
-  },
-];
-const formItemLayout = {
-  labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 8,
-    },
-  },
-  wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 16,
-    },
-  },
-};
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
-
-function RegistrationForm ()  {
-  const [form] = Form.useForm();
-
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
-
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle >
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-  const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-  );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-    }
-  };
-
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
-  return (
-	<Card title="Sign Up"  style={{ font: 80 , width: 950, height: 640 , alignContent: "center", justifyContent:"center"}}> 
-    <Form
-      {...formItemLayout}
-      form={form}
-      name="register"
-      onFinish={onFinish}
-      initialValues={{
-        residence: ['zhejiang', 'hangzhou', 'xihu'],
-        prefix: '86',
-      }}
-      scrollToFirstError
-	  style={{
-		width: 810,
-	  }}
-	  
-    >
-	
-	
-      <Form.Item
-        name="email"
-        label="E-mail"
-        rules={[
-          {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-          },
-          {
-            required: true,
-            message: 'Please input your E-mail!',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        name="password"
-        label="Password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}
-        hasFeedback
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item
-        name="confirm"
-        label="Confirm Password"
-        dependencies={['password']}
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please confirm your password!',
-          },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-
-              return Promise.reject(new Error('The two passwords that you entered do not match!'));
-            },
-          }),
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item
-        name="nickname"
-        label="Name"
-        tooltip="What do you want others to call you?"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your nickname!',
-            whitespace: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      
-      <Form.Item
-        name="phone"
-        label="Phone Number"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your phone number!',
-          },
-        ]}
-      >
-        <Input
-          addonBefore={prefixSelector}
-          style={{
-            width: '100%',
-          }}
-        />
-      </Form.Item>
-
-      <Form.Item
-        name="address"
-        label="Address"
-        rules={[
-          {
-            required: true,
-            message: 'Please input address!',
-          },
-        ]}
-      >
-        
-        
-        
-      
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        name="Grade"
-        label="Grade"
-        rules={[
-          {
-            required: true,
-            message: 'Please input Grade!',
-          },
-        ]}
-      >
-        <AutoComplete options={websiteOptions} onChange={onWebsiteChange} >
-          <Input />
-        </AutoComplete>
-      </Form.Item>
-
-      <Form.Item
-        name="gender"
-        label="Gender"
-        rules={[
-          {
-            required: true,
-            message: 'Please select gender!',
-          },
-        ]}
-      >
-        <Select placeholder="select your gender">
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-
-      
-
-      <Row align="center">
-      <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
-          Register
-        </Button>
-      </Form.Item>
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" href="/login">
-          Login
-        </Button>
-      </Form.Item>
-	  </Row>
-    </Form>
-	</Card>
-  );
-};
-
-//ReactDOM.render(<RegistrationForm />, mountNode);
-export default RegistrationForm;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        );
+}
+
+export default SignUp;

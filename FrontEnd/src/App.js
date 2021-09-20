@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginTest from "./Test/Login Test";
 import Home from "./AppHome";
-import RegistrationForm from "./components/SignUp/signUp";
+import SignUp from "./components/SignUp/signUp";
 function App() {
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ function App() {
             <LoginTest />
           </Route>
           <Route exact path="/signup">
-          <RegistrationForm />
+            <SignUp />
           </Route>
         </Switch>
       </div>
