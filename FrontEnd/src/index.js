@@ -8,11 +8,10 @@ import { Auth0Provider } from "@auth0/auth0-react";
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-zgsgae4p.us.auth0.com"
-      clientId="i62Hj5XwRuPauKxu7HO5XOLcWqJcslhJ"
+      domain="dev-fnrh5opn.us.auth0.com"
+      clientId="yLnTlRbSkc1MVlHLJIsiMvEhCGtbOWnu"
       redirectUri={window.location.origin}
-      // onRedirectCallback=""
-      audience="https://express.sample"
+      audience="https://dev-fnrh5opn.us.auth0.com/api/v2/"
       scope="openid profile email"
     >
       <App />
