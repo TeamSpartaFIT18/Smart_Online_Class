@@ -4,6 +4,7 @@ import colors from "colors";
 import bodyParser from "body-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
+import userRoutes from "./routes/userRoutes.js";
 import jwtCheck from "./middleware/auth.js";
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.send("API is running....");
 });
+app.use("/api/users", userRoutes);
 
 app.use(jwtCheck);
 app.use(notFound);
