@@ -11,6 +11,7 @@ const jwtCheck = jwt({
   audience: "https://dev-fnrh5opn.us.auth0.com/api/v2/",
   issuer: "https://dev-fnrh5opn.us.auth0.com/",
   algorithms: ["RS256"],
-}).unless({ path: ["/"] });
+});
+
 
 export default jwtCheck;
