@@ -12,6 +12,14 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  display: flex;
+}
+
+.others {
+  flex: 4;
+}
+
 .container-fluid {
   margin: 0 auto;
   max-width: 1200px;
@@ -51,7 +59,7 @@ title holder
 
 .titleHolder:after {
   transform: translateX(-50%);
-  content: "";
+  content: '';
   background: #1890ff;
   position: absolute;
   bottom: 0;
@@ -119,7 +127,7 @@ header
 
 .header .ant-anchor-link:before,
 .header .ant-anchor-link:after {
-  content: "";
+  content: '';
   background: #1890ff;
   width: 1px;
   position: absolute;
@@ -160,7 +168,7 @@ header
 
 .header .ant-menu li.ant-menu-item:before,
 .header .ant-menu li.ant-menu-item:after {
-  content: "";
+  content: '';
   background: #1890ff;
   width: 1px;
   position: absolute;
@@ -204,7 +212,7 @@ hero
 ---- 
 */
 .heroBlock {
-  background: url("assets/images/bg-hero.jpg") no-repeat;
+  background: url('assets/images/bg-hero.jpg') no-repeat;
   background-position: 50% 100%;
   background-size: cover;
   height: 100vh;
@@ -287,7 +295,7 @@ how it works
 ------------
 */
 .worksBlock {
-  background: url("assets/images/bg-works.jpg") no-repeat;
+  background: url('assets/images/bg-works.jpg') no-repeat;
   background-position: 50% 0;
   background-size: cover;
   background-attachment: fixed;
@@ -296,7 +304,7 @@ how it works
 }
 
 .worksBlock:before {
-  content: "";
+  content: '';
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
