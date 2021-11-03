@@ -7,6 +7,7 @@ import User from "../models/userModel.js";
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, phone_number, picture, user_id } = req.body;
   console.log(req.body);
+
   const userExists = await User.findOne({ email });
 
   if (userExists) {
