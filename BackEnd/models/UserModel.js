@@ -20,10 +20,14 @@ const userSchema = mongoose.Schema(
     picture: {
       type: String,
     },
+    user_type: {
+      type: String,
+    },
     user_id: {
       type: String,
       required: true,
     },
+    classes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Class" }],
   },
   {
     timestamps: true,
