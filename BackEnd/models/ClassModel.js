@@ -23,7 +23,19 @@ const classSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
-    link: {
+    join_url: {
+      type: String,
+      required: true,
+    },
+    start_url: {
+      type: String,
+      required: true,
+    },
+    meeting_id: {
+      type: String,
+      required: true,
+    },
+    meeting_password: {
       type: String,
       required: true,
     },
